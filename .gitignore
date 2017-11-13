@@ -1,0 +1,30 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+
+# Uploaded files
+# ----------------------------------------------------------------------
+web/assets/uploads/*
+web/assets/img/
+!web/assets/img/svg/*.svg
+web/icons/
+web/assets/imager/
+data/
+.vscode/
+
+# Misc files
+# ----------------------------------------------------------------------
+.DS_Store
+node_modules
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+.babelrc
+.eslintrc
+.scss-lint.yml
+
+libs
