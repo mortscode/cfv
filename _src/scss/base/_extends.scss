@@ -1,0 +1,26 @@
+// NAVIGATION
+%navbar-width {
+  width: $navbar-lg;
+  @include bp($md) {
+    width: $navbar-md;
+  }
+  @include bp($sm) {
+    width: $navbar-sm;
+  }
+}
+
+%hamburger-line {
+  height: 3px;
+  background-color: $gray;
+  transition: background-color $ease-fast, transform $ease-fast, width $ease-fast;
+}
+
+%hamburger-pseudo {
+  @extend %hamburger-line;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

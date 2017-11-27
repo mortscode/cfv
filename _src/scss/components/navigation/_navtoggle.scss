@@ -1,0 +1,95 @@
+.navtoggle {
+  @extend %navbar-width;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  height: 100px;
+  margin: 0;
+  transition: opacity $ease-med, transform $ease-med, width $ease-fast;
+  z-index: $z-navtoggle;
+  //position
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  //flex
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  .wf-active & {
+    transform: translate(0, -50%);
+  }
+
+  &:hover {
+    %hamburger-line {
+      background-color: $dark;
+    }
+
+    .navtoggle__hamburger::before {
+      transform: translateY(-10px);
+    }
+    .navtoggle__hamburger::after {
+      transform: translateY(10px);
+    }
+  }
+
+  .navigation.-active & {
+    .navtoggle__hamburger {
+      background-color: rgba($dark, 0);
+      transform: rotate(90deg);
+    }
+    %hamburger-pseudo {
+      background-color: $gray;
+    }
+    .navtoggle__hamburger::before {
+      transform: rotate(-225deg);
+    }
+    .navtoggle__hamburger::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &.-close {
+    &:hover {
+      %hamburger-pseudo {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__hamburger {
+    @extend %hamburger-line;
+    flex: 0 0 100%;
+    max-width: 36px;
+    position: relative;
+
+    @include bp($sm) {
+      max-width: 24px;
+    }
+    
+    &::before {
+      @extend %hamburger-pseudo;
+      transform: translateY(-13px);
+
+      @include bp($sm) {
+       transform: translateY(-10px); 
+      }
+    }
+    
+    &::after {
+      @extend %hamburger-pseudo;
+      transform: translateY(13px);
+
+      @include bp($sm) {
+        transform: translateY(10px); 
+      }
+    }
+  }
+}

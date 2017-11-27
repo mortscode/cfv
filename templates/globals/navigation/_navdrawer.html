@@ -1,0 +1,11 @@
+<div class="navdrawer js-close-nav">
+  <nav class="navlist">
+    <ul class="navlist__main">
+      {% for item in mainNavigation.navigationLink.all() %}
+        <li class="navlist__main--item">
+          <a href="{{item.linkEntry[0].url}}" class="navlist__main--link">{{item.linkText}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

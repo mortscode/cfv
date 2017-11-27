@@ -1,0 +1,17 @@
+.about {
+  background-color: $white;
+  // flex
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title {
+    @extend %headline-xl;
+    color: $green;
+    // flex item
+    flex: 0 0 100%;
+
+    @include bp($sm) {
+      padding: 0 24px;
+    }
+  }
+}

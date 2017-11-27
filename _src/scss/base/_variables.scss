@@ -1,0 +1,27 @@
+// Typography
+$font-title: "futura-pt-condensed", "Arial Narrow", serif;
+$font-body: "Roboto", sans-serif;
+
+// Colors
+$white: #ffffff;
+$light: #F0F2F1;
+$gray: #BDBFBE;
+$green: #0D9648;
+$dark: #231F26;
+
+// Widths
+$max-content: 1800px;
+$navbar-lg: 100px;
+$navbar-md: 72px;
+$navbar-sm: 48px;
+
+// Transitions
+$ease-fast: 150ms ease-in-out;
+$ease-med: 400ms ease-in-out;
+$ease-slow: 800ms ease-in-out;
+
+// z-index
+$z-navigation: 8765310;
+$z-navtoggle: $z-navigation + 3;
+$z-navbar: $z-navigation + 2;
+$z-navdrawer: $z-navigation + 1;

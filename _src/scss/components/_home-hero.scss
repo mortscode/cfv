@@ -1,0 +1,95 @@
+.home-hero {
+  background-color: $gray;
+  background-position: center center;
+  background-size: cover;
+  color: $white;
+  min-height: calc(100vh - 180px);
+  position: relative;
+  transition: height $ease-fast;
+  // flex item
+  flex: 0 0 100%;
+  // flex
+  display: flex;
+  
+  @include bp($lg) {
+    min-height: calc(100vh - 140px);
+  }
+
+  @include bp($md) {
+    flex-wrap: wrap;
+  }
+
+  &__shade {
+    // background-color: rgba($dark, 0.5);
+    background: linear-gradient(to right top, rgba($dark, 0.7), rgba($dark, 0.2));
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__welcome {
+    color: $white;
+    padding: 60px;
+    position: relative;
+    // flex-item
+    flex: 1 1 auto;
+    // flex
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    
+    @include bp($sm) {
+      align-items: center;
+      height: calc(100vh - 60px);
+      padding: 48px;
+    }
+
+    @include bp($xs) {
+      padding: 24px;
+    }
+    
+    &--wrapper {
+      max-width: 360px;
+      width: 100%;
+    }
+
+    &--title {
+      @include svg(135, 364, $white);
+      margin-top: 60px;
+    }
+
+    &--text {
+      @extend %text-md;
+      color: $white;
+      margin: 45px 0;
+      padding: 0;
+
+      @include bp($sm) {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  &__classes {
+    background-color: rgba($dark, 0.9);
+    color: $white;
+    min-width: 300px;
+    position: relative;
+    transition: width $ease-fast;
+    // flex item
+    flex: 0 1 auto;
+    // flex
+    display: flex;
+    flex-wrap: wrap;
+
+    @include bp($lg) {
+      min-width: 0;
+    }
+
+    @include bp($md) {
+      flex: 0 0 100%;
+    }
+  }
+}

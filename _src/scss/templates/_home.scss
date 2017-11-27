@@ -1,0 +1,13 @@
+.home {
+  &__content {
+    display: flex;
+    
+    &--wrapper {
+      // flex item
+      flex: 1 1 auto;
+      // flex
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.navlist {
+  opacity: 0;
+  transition: opacity $ease-fast;
+  transition-delay: 400ms;
+  
+  .navigation.-active & {
+    opacity: 1;
+  }
+  
+  &__main {
+    padding: 0;
+    
+    &--item {
+      list-style: none;
+
+      &:hover {
+        .navlist__main--link {
+          color: $white;
+          transform: translateX(20px);
+        }
+      }
+    }
+    
+    &--link {
+      @extend %navigation-main;
+      color: $light;
+      display: block;
+      padding: 18px 0;
+      transition: color $ease-fast, transform $ease-fast;
+    }
+  }
+}

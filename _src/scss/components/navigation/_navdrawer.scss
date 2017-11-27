@@ -1,0 +1,28 @@
+.navdrawer {
+  background-color: $dark;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-left: $navbar-lg + 72px;
+  transform: translateX(-100%);
+  transition: transform $ease-med;
+  z-index: $z-navdrawer;
+  // flex
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  
+  @include bp($md) {
+    padding-left: $navbar-md + 60px;
+  }
+  
+  @include bp($sm) {
+    padding-left: $navbar-sm + 48px;
+  }
+
+  .navigation.-active & {
+    transform: none;
+  }
+}

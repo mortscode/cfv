@@ -1,0 +1,18 @@
+@mixin svg($height, $width, $color: $dark) {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: ($height / $width) * 100%;
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: $color;
+  }
+}

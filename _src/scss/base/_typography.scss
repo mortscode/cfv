@@ -1,0 +1,138 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+%headline-xl {
+  font-family: $font-title;
+  font-size: 4.8rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 3.6rem;
+  }
+}
+
+%headline-lg {
+  font-family: $font-title;
+  font-size: 3.0rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 2.4rem;
+  }
+}
+
+%headline-md {
+  font-family: $font-title;
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 2.1rem;
+  }
+}
+
+%headline-md-low {
+  font-family: $font-title;
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 2.1rem;
+  }
+}
+
+%text-md {
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+// SPECIFICS
+%navigation-main {
+  font-family: $font-title;
+  font-size: 7.2rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+
+  @include bp($md) {
+    font-size: 4.8rem;
+  }
+
+  @include bp($sm) {
+    font-size: 3.6rem;
+  }
+
+  @include bp($xs) {
+    font-size: 2.4rem;
+  }
+}
+
+%wod-text {
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 1.6rem;
+  }
+}
+
+%footer-link {
+  font-family: $font-body;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $gray;
+  position: relative;
+  transition: color $ease-fast;
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $light;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    transition: width $ease-fast;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{% if item.type == 'entryLink' %}
+<a href="{{item.linkEntry[0].url}}" class="{{class}}">{{item.linkText}}</a>
+{% elseif item.type == 'customLink' %}
+<a href="{{item.linkUrl}}" class="{{class}}" target="_blank">{{item.linkText}}</a>
+{% endif %}

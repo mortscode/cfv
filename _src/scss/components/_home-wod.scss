@@ -1,0 +1,73 @@
+.home-wod {
+  margin-right: 60px;
+  transition: flex $ease-fast;
+  // flex item
+  flex: 0 0 400px;
+  // flex
+  display: flex;
+  flex-direction: column;
+
+  @include bp($lg) {
+    flex: 0 0 300px;
+    margin-right: 40px;
+  }
+  
+  @include bp($md) {
+    flex: 0 0 50%;
+    margin-right: 20px;
+  }
+
+  @include bp($sm) {
+    flex: 0 0 100%;
+    margin: 0 0 24px;
+  }
+
+  &__title {
+    @extend %headline-lg;
+    background-color: $green;
+    color: $white;
+    padding: 20px 40px;
+
+    @include bp($md) {
+      padding: 18px 24px;
+    }
+  }
+  &__wod-title {
+    @extend %headline-md;
+    background-color: $dark;
+    color: $white;
+    padding: 15px 40px;
+
+    @include bp($md) {
+      padding: 18px 24px;
+    }
+  }
+  &__workout {
+    background-color: $white;
+    padding: 30px 40px;
+    // flex item
+    flex: 1 0 auto;
+
+    @include bp($md) {
+      padding: 18px 24px;
+    }
+
+    p {
+      @extend %wod-text;
+    }
+  }
+  &__cta {
+    @extend %headline-md;
+    background-color: $white;
+    border-top: 2px solid $gray;
+    color: $green;
+    padding: 20px;
+    text-align: center;
+    transition: color $ease-fast, background $ease-fast;
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.navbar {
+  @extend %navbar-width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  box-shadow: 1px 0px 0px 0px rgba($gray, 0.4);
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: left $ease-med, transform $ease-med, width $ease-fast;
+  z-index: $z-navbar;
+  // flexbox
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wf-active & {
+    transform: none;
+  }
+
+  // active state
+  .navigation.-active & {
+    left: calc(100% - 100px);
+    
+    @include bp($md) {
+      left: calc(100% - 72px);
+    }
+
+    @include bp($sm) {
+      left: calc(100% - 48px);
+    }
+  }
+
+  &__brand {
+    @include svg(130, 100, $green);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &--icon {
+      transition: fill $ease-fast;
+      
+      &:hover {
+        fill: darken($green, 10%);
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ import uglify from 'gulp-uglify';
 
 // HTML
 gulp.task('html', () => {
-  return gulp.src('vendor/templates/**/*.html').pipe(livereload());
+  return gulp.src('templates/**/*.html').pipe(livereload());
 });
 
 // SCRIPTS
@@ -119,10 +119,10 @@ gulp.task('default', ['html', 'scripts', 'styles', 'svgstore'], () => {
   livereload.listen({
     start: true,
   });
-  gulp.watch('vendor/templates/**/*.html', ['html']);
+  gulp.watch('templates/**/*.html', ['html']);
   gulp.watch('_src/js/**/*.js', ['scripts']);
   gulp.watch('_src/scss/**/*.scss', ['styles']);
-  gulp.watch('_src/svg/**/*.svg', ['svgstore']);
+  gulp.watch('_src/svg/*.svg', ['svgstore']);
 });
 
 // Watch Files For Changes & Reload

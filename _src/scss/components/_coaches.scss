@@ -1,0 +1,73 @@
+.coaches {
+  box-shadow: 0;
+  overflow-x: hidden;
+  // margin: 0 -15px;
+  // // flex item
+  // flex: 0 0 100%;
+  // flex
+  display: flex;
+  // flex-wrap: wrap;
+
+  
+  &__title {
+    @extend %headline-lg;
+    //flex item
+    flex: 0 0 100%;
+    
+    @include bp($sm) {
+      padding: 0 24px;
+    }
+  }
+  
+  &__wrapper {
+    margin: 0 -15px;
+    // flex item
+    flex: 0 0 calc(100% + 30px);
+    // flex
+    display: flex;
+    flex-wrap: wrap;
+    
+    @include bp($sm) {
+      margin: 0;
+      // flex item
+      flex: 0 0 100%;
+      // flex
+      justify-content: space-between;
+    }
+  }
+  
+  &__coach {
+    padding: 24px 15px 0;
+    // flex item
+    flex: 0 0 calc(25%);
+    
+    @include bp($md) {
+      flex: 0 0 calc(33%);
+    }
+
+    @include bp($sm) {
+      padding: 24px 0 0;
+      flex: 0 0 calc(50% - 15px);
+    }
+
+    &:hover {
+      .coaches__coach--image {
+        box-shadow: 0px 6px 12px rgba($dark, 0.3);
+        transform: translateY(-6px);
+      }
+    }
+    
+    &--image {
+      width: 100%;
+      height: auto;
+      transition: transform $ease-fast, box-shadow $ease-fast;
+    }
+
+    &--name {
+      @extend %headline-md-low;
+      color: $green;
+      margin-top: 8px;
+      text-align: center;
+    }
+  }
+}

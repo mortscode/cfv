@@ -1,0 +1,29 @@
+//breakpoints
+$breakpoint_xsmall: 374px; // small-mobile
+$breakpoint_small: 600px; // mobile
+$breakpoint_medium: 840px; // tablet
+$breakpoint_large: 1200px; // small desktop
+$breakpoint_xlarge: 1440px; // large desktop
+$breakpoint_tall: 1000px;
+$breakpoint_short: 480px;
+
+$xs: $breakpoint_xsmall;
+$sm: $breakpoint_small;
+$md: $breakpoint_medium;
+$lg: $breakpoint_large;
+$xl: $breakpoint_xlarge;
+$tall: $breakpoint_tall;
+$short: $breakpoint_short;
+
+// breakpoints
+@mixin bp($breaker, $feature: max-width) {
+  @media only screen and (#{$feature}: $breaker) {
+    @content;
+  }
+}
+
+@mixin bph($breaker, $feature: max-height) {
+  @media only screen and (#{$feature}: $breaker) {
+    @content;
+  }
+}

@@ -1,3 +1,6 @@
+{% if craft.app.config.general.devMode %}
+<link rel="stylesheet" href="/assets/styles/main.css" type="text/css">
+{% else %}
 <link rel="preload" href="/assets/styles/main.css" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/styles/main.css" media="all"></noscript>
 <script>
@@ -107,3 +110,4 @@
   }
 }( this ));
 </script>
+{% endif %}

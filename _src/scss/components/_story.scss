@@ -1,0 +1,6 @@
+.story {
+
+  &__title {
+    @extend %headline-lg;
+  }
+}

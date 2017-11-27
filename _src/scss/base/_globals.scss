@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  color: $dark;
+  font-family: $font-body;
+  font-size: 1.8rem;
+
+  @include bp($lg) {
+    font-size: 1.6rem;
+  }
+}
+
+html {
+  font-size: 62.5%; // 10px root font size
+}
+
+.tk-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity $ease-med, transform $ease-med;
+  transition-delay: 200ms;
+  
+  .wf-active & {
+    transform: none;
+    opacity: 1;
+  }
+}

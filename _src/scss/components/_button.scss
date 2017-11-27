@@ -1,0 +1,26 @@
+.button {
+  @extend %headline-md;
+  display: inline-block;
+  padding: 15px 45px;
+  transition: background $ease-fast, color $ease-fast;
+
+  &.-dark {
+    color: $white;
+    background-color: $dark;
+
+    &:hover {
+      color: $dark;
+      background-color: $white;
+    }
+  }
+
+  &.-green {
+    color: $white;
+    background-color: $green;
+
+    &:hover {
+      color: $green;
+      background-color: $white;
+    }
+  }
+}
