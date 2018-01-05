@@ -1,0 +1,6 @@
+.start {
+  &__title {
+    @extend %headline-xl;
+    color: $white;
+  }
+}

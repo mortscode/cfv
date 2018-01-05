@@ -1,17 +1,42 @@
+{% set today = now|date('l')|lower %}
+{% set schedule = defaultSchedules.dailySchedules.dayOfWeek(today).one %}
+{% set custom = false %}
+
+{% for sched in craft.entries.section('customSchedules').all() if sched.cc_date|date('ymd') == now|date('ymd')  %}
+  {% set schedule = sched %}
+  {% set custom = true %}
+{% endfor %}
+
 <div class="home-classes">
   <div class="home-classes__date">{{ now|date("F d, Y") }}</div>
   <div class="home-classes__title">Today's Schedule</div>
   <div class="home-classes__times">
-    <ul class="home-classes__time-list">
-      <li class="home-classes__time-list--item">6:00AM</li>
-      <li class="home-classes__time-list--item">7:00AM</li>
-      <li class="home-classes__time-list--item">9:00AM</li>
-      <li class="home-classes__time-list--item">10:00AM</li>
-      <li class="home-classes__time-list--item">3:30AM</li>
-      <li class="home-classes__time-list--item">4:30AM</li>
-      <li class="home-classes__time-list--item">5:30AM</li>
-      <li class="home-classes__time-list--item">6:30AM</li>
-    </ul>
+    {% if custom %} {# has custom schedule #}
+      {% if schedule.cc_classes|length %}
+      <ul class="home-classes__time-list">
+        {% for class in schedule.cc_classes %}
+        <li class="home-classes__time-list--item">
+          {{class.time}}
+          {% if class.note %}<span class="home-classes__time-list--note">{{class.note}}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% else %} {# no custom schedule / use default #}
+      {% if schedule.classes|length %}
+      <ul class="home-classes__time-list">
+        {% for class in schedule.classes %}
+        <li class="home-classes__time-list--item">
+          {{class.time}}
+          {% if class.note %}<span class="home-classes__time-list--note">{{class.note}}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if schedule.textBlock %}
+      <p class="home-classes__text-block">{{schedule.textBlock}}</p>
+      {% endif %}
+    {% endif %}
   </div>
-  <a href="#" class="home-classes__cta">Full Schedule</a>
+  <a href="/schedule" class="home-classes__cta">Full Schedule</a>
 </div>

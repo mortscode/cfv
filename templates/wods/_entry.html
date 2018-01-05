@@ -1,0 +1,29 @@
+{% extends '_layout' %}
+
+{% block content %}
+<div class="section-dark">
+  <div class="section -half">
+    <a href="/wods" class="breadcrumb">< WOD Archive</a>
+  </div>
+</div>
+<section class="section-white">
+  <div class="section">
+    <date class="wod-entry__date">{{entry.postDate|date('F d, Y')}}</date>
+    <h1 class="wod-entry__title">{{ entry.title }}</h1>
+  </div>
+</section>
+<section class="section-gray">
+  <div class="section wod-entry">
+    <div class="wod-entry__workout">
+      {{entry.workout}}
+    </div>
+    {% if entry.notes|length %}
+    <div class="wod-entry__notes">
+      <div class="wod-entry__notes--wrapper">
+        {{entry.notes}}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

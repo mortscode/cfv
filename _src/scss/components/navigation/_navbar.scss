@@ -6,13 +6,22 @@
   background-color: $white;
   box-shadow: 1px 0px 0px 0px rgba($gray, 0.4);
   height: 100vh;
+  padding: 24px;
   transform: translateX(-100%);
-  transition: left $ease-med, transform $ease-med, width $ease-fast;
+  transition: left $ease-med, transform $ease-med, width $ease-fast, padding $ease-fast;
   z-index: $z-navbar;
   // flexbox
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include bp($md) {
+    padding: 12px;
+  }
+  
+  @include bp($sm) {
+    padding: 0px;
+  }
 
   .wf-active & {
     transform: none;
@@ -44,6 +53,67 @@
       &:hover {
         fill: darken($green, 10%);
       }
+    }
+  }
+
+  &__social {
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    transition: opacity $ease-fast;
+    // flex
+    display: flex;
+    flex-wrap: wrap;
+
+    &--item {
+      background-color: $dark;
+      margin: 12px 0;
+      position: relative;
+      width: 100%;
+      transition: background $ease-fast;
+      // flex item
+      flex: 0 0 100%;
+
+      @include bp($sm) {
+        margin: 6px 0;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      &:hover {
+        background-color: $green;
+
+        .navbar__social--icon {
+          fill: $white;
+          width: 75%;
+          height: 75%;
+        }
+      }
+    }
+
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      fill: $light;
+      width: 60%;
+      height: 60%;
+      transform: translate(-50%, -50%);
+      transition: fill $ease-fast, width $ease-fast, height $ease-fast;
+
+      @include bp($sm) {
+        width: 70%;
+        height: 70%;
+      }
+    }
+
+    .navigation.-active & {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

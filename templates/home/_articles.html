@@ -1,5 +1,14 @@
+{% set article1 = craft.entries.section('blogEntries')[0] %}
+{% set article2 = craft.entries.section('blogEntries')[1] %}
+{% set article3 = craft.entries.section('blogEntries')[2] %}
 <div class="home-articles">
-  <div class="home-articles__article"></div>
-  <div class="home-articles__article"></div>
-  <div class="home-articles__article"></div>
+  <a href="{{ article1.url }}" class="home-articles__article" style="background-image:url('{{ article1.featuredImage.one.url }}')">
+    <h2 class="home-articles__article--title primary">{{ article1.title }}</h2>
+  </a>
+  <a href="{{ article2.url }}" class="home-articles__article" style="background-image:url('{{ article2.featuredImage.one.url }}')">
+    <h2 class="home-articles__article--title secondary">{{ article2.title }}</h2>
+  </a>
+  <a href="{{ article3.url }}" class="home-articles__article" style="background-image:url('{{ article3.featuredImage.one.url }}')">
+    <h2 class="home-articles__article--title secondary">{{ article3.title }}</h2>
+  </a>
 </div>

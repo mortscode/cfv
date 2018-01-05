@@ -1,0 +1,9 @@
+{% set isAjax = craft.app.request.isAjax and not craft.app.request.isLivePreview  %}
+{% extends not isAjax ? '_layout' : 'about/_coach' %}
+{% block content %}
+    {% if not isAjax %}
+      <div class="section-white">Hello! I'm not Ajax.</div>
+    {% else %}
+        {% do craft.entryCount.increment(entry.id) %}
+    {% endif %}
+{% endblock %}

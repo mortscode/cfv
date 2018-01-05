@@ -1,0 +1,19 @@
+<div class="footer__column footer__contact">
+  <div class="footer__contact--flex-item">
+    <a href="tel:+13609897765" class="footer__contact--phone">(360) 989-7765</a>
+  </div>
+  <div class="footer__contact--flex-item">
+    <a href="https://goo.gl/maps/FsJQeDWZFh52" class="footer__contact--address" target="_blank">223 E. Reserve St. #101<br/>Vancouver, WA 98661</a>
+  </div>
+  <div class="footer__contact--social">
+    {% for social in socialLinks.socialLinks.all() %}
+      {% set icon = social.networkName|lower %}
+      <a href="{{social.networkUrl}}" class="footer__contact--social-item" alt="{{social.networkName}}" title="{{social.networkName}}" target="_blank">
+        {% include 'utils/svg' with {
+          'id' : icon,
+          'class' : 'footer__contact--social-icon',
+        } %}
+      </a>
+    {% endfor %}
+  </div>
+</div>

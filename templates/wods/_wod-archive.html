@@ -1,0 +1,15 @@
+<section class="section-gray">
+  <div class="section wods">
+  {% for entry in craft.entries.section('wodEntries').limit(24).all() %}
+    <a href="{{entry.url}}" class="wods__wod">
+      <div class="wods__wod--date">{{entry.postDate|date('D, m/d/y')}}</div>
+      <div class="wods__wod--title">{{entry.title}}</div>
+      <ul class="wods__wod--tag-list">
+        {% for tag in entry.movements.orderBy('title').all() %}
+          <li class="wods__wod--tag">{{tag}}</li>
+        {% endfor %}
+      </ul>
+    </a>
+  {% endfor %}
+  </div>
+</section>

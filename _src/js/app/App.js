@@ -23,6 +23,10 @@ export default class App {
     resizer.on('resize', () => {
       emitter.fire('app--resizer');
     });
+
+    emitter.on('get-instances', () => {
+      this._getInstances();
+    });
   }
 
   _getInstances() {

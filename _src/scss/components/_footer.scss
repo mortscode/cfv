@@ -1,46 +1,150 @@
 .footer {
-  background-color: $dark;
-  color: $light;
   // flex
   display: flex;
   flex-wrap: wrap;
   
   &__column {
+    padding-right: 90px;
+    transition: padding $ease-fast;
     // flex item
     flex: 0 0 auto;
-
+    @include bp($md) {
+      max-width: 25%;
+      padding-right: 30px;
+    }
     @include bp($sm) {
-      padding: 0 24px;
-      flex: 0 0 50%;
+      max-width: none;
+      padding: 0 24px 0 0;
+      flex: 1 0 50%;
     }
     
     &:last-child {
+      padding-right: 0;
+      max-width: none;
       flex: 1 0 auto;
-      // flex
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
       
       @include bp($sm) {
+        margin-top: 24px;
         flex: 0 0 100%;
-        height: 100px;
       }
     }
   }
   
   &__nav {
-    
     &--list {
       margin: 0;
-      padding: 0 90px 0 0;
+      padding: 0;
+
+      @include bp($sm) {
+        padding: 0;
+      }
     }
     &--item {
       color: $light;
       list-style: none;
-      padding: 4px 0;
+      padding: 0 0 16px;
+
+      @include bp($md) {
+        padding-bottom: 14px;
+      }
+
+      &:last-child {
+        padding: 0;
+      }
     }
     &--link {
       @extend %footer-link;
+    }
+  }
+
+  &__contact {
+    text-align: right;
+    // flex
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    
+    @include bp($sm) {
+      align-content: center;
+    }
+
+    &--flex-item {
+      @include bp($sm) {
+        text-align: center;
+      }
+    }
+
+    &--phone {
+      @extend %headline-lg;
+      color: $white;
+      display: inline-block;
+      text-align: right;
+      transition: color $ease-fast;
+
+      @include bp($sm) {
+        text-align: center;
+      }
+
+      &:hover {
+        color: $green;
+      }
+    }
+    
+    &--address {
+      @extend %footer-link;
+      display: inline-block;
+      margin: 18px 0 36px;
+      text-align: right;
+
+      @include bp($sm) {
+        text-align: center;
+      }
+    }
+
+    &--social {
+      @include bp($sm) {
+        text-align: center;
+      }
+    }
+    
+    &--social-item {
+      background-color: $gray;
+      display: inline-block;
+      margin-left: 12px;
+      position: relative;
+      height: 40px;
+      width: 40px;
+      transition: background $ease-fast;
+
+      @include bp($sm) {
+        // margin: 6px 0;
+      }
+
+      &:hover {
+        background-color: $green;
+
+        .footer__contact--social-icon {
+          fill: $white;
+          width: 75%;
+          height: 75%;
+        }
+      }
+    }
+
+    &--social-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      fill: $dark;
+      width: 60%;
+      height: 60%;
+      transform: translate(-50%, -50%);
+      transition: fill $ease-fast, width $ease-fast, height $ease-fast;
+
+      @include bp($sm) {
+        width: 70%;
+        height: 70%;
+      }
     }
   }
 }

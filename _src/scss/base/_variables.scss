@@ -11,6 +11,7 @@ $dark: #231F26;
 
 // Widths
 $max-content: 1800px;
+$narrow-content: 1024px;
 $navbar-lg: 100px;
 $navbar-md: 72px;
 $navbar-sm: 48px;
@@ -25,3 +26,4 @@ $z-navigation: 8765310;
 $z-navtoggle: $z-navigation + 3;
 $z-navbar: $z-navigation + 2;
 $z-navdrawer: $z-navigation + 1;
+$z-modal: $z-navigation - 1;

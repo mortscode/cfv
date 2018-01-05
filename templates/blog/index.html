@@ -1,7 +1,20 @@
 {% extends '_layout' %}
 
 {% block content %}
-  <div class="section">
-  {{ entry.title }}
+<section class="section-white">
+  <div class="section blog">
+    <h1 class="blog__headline">{{ entry.title }}</h1>
   </div>
+</section>
+<section class="section-gray">
+  <div class="blog__entries section">
+  {% for entry in craft.entries.section('blogEntries').limit(24).all() %}
+    <a href="{{entry.url}}" class="blog__entry">
+      <div class="blog__entry--image" style="background-image:url('{{entry.featuredImage.one.url}}')"></div>
+      <div class="blog__entry--date">{{entry.postDate|date("m/d/Y")}}</div>
+      <h2 class="blog__entry--title">{{entry.title}}</h2>
+    </a>
+  {% endfor %}
+  </div>
+</section>
 {% endblock %}

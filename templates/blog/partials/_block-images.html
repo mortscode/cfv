@@ -1,0 +1,12 @@
+{% set imageAmt = block.imageBlock|length %}
+<div class="images {% if imageAmt > 1 %}-flex{% endif %}">
+  {% if imageAmt > 1 %}
+  {% for image in block.imageBlock.all() %}
+    <div class="images__flex-item">
+      <img src="{{image.url}}" alt="{{entry.title}} image" class="images__image">
+    </div>
+  {% endfor %}
+  {% else %}
+  <img class="images__image" src="{{block.imageBlock.one.url}}" alt="{{entry.title}} image">
+  {% endif %}
+</div>

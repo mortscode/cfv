@@ -1,0 +1,15 @@
+{
+  "buttons": ["formatting", "bold", "italic", "underline", "lists", "link"],
+  "formatting": ["p"],
+  "formattingAdd": {
+    "Heading": {
+      "title": "Headline",
+      "args": ["h2", "class", "-blog-headline"]
+    },
+    "Subhead": {
+      "title": "Subhead",
+      "args": ["h3", "class", "-blog-subhead"]
+    }
+  },
+  "toolbarFixed": true
+}

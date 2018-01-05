@@ -1,12 +1,9 @@
+{% set currentWod = craft.entries.section('wodEntries').one %}
 <div class="home-wod">
   <div class="home-wod__title">Workout of the day</div>
-  <div class="home-wod__wod-title">Partner workout</div>
+  <a href="{{currentWod.url}}" class="home-wod__wod-title">{{currentWod.title}}</a>
   <div class="home-wod__workout">
-    <p>18:00 AMRAP</p>
-    <p>10 Overhead squats, 95/65</p>
-    <p>8 Burpees</p>
-    <p>6 Pull-ups, C2B</p>
-    <p>Alternate rounds with your partner. During rest period, complete a 15-second L-Sit.</p>
+    {{currentWod.workout}}
   </div>
-  <a href="#" class="home-wod__cta">Wod Archive</a>
+  <a href="/wods" class="home-wod__cta">Wod Archive</a>
 </div>

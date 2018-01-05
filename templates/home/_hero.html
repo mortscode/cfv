@@ -1,26 +1,28 @@
 {% set heroImage = shuffle(entry.heroImages) %}
-<div class="home section -hero">
-  <div class="home-hero" style="background-image:url('{{heroImage[0].url}}')">
-    <div class="home-hero__shade"></div>
-    <div class="home-hero__welcome">
-      <div class="home-hero__welcome--wrapper">
-        <div class="home-hero__welcome--title">
-          {% include 'utils/svg' with {
-            "id" : "hero-logo",
-            "class" : "home-hero__welcome--svg",
-          } %}
+<section class="section-gray">
+  <div class="home section -hero">
+    <div class="home-hero" style="background-image:url('{{heroImage[0].url}}')">
+      <div class="home-hero__shade"></div>
+      <div class="home-hero__welcome">
+        <div class="home-hero__welcome--wrapper">
+          <div class="home-hero__welcome--title">
+            {% include 'utils/svg' with {
+              "id" : "hero-logo",
+              "class" : "home-hero__welcome--svg",
+            } %}
+          </div>
+          <p class="home-hero__welcome--text">{{entry.heroText}}</p>
+          {% include "utils/button" with {
+            "href" : "/",
+            "class" : "home-hero__welcome--cta",
+            "text" : "Get Started",
+            "color" : "green"
+          }%}
         </div>
-        <p class="home-hero__welcome--text">{{entry.heroText}}</p>
-        {% include "utils/button" with {
-          "href" : "/",
-          "class" : "home-hero__welcome--cta",
-          "text" : "Get Started",
-          "color" : "green"
-        }%}
+      </div>
+      <div class="home-hero__classes">
+        {% include 'home/_classes' %}
       </div>
     </div>
-    <div class="home-hero__classes">
-      {% include 'home/_classes' %}
-    </div>
   </div>
-</div>
+</section>

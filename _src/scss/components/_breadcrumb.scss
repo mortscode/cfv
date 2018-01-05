@@ -1,0 +1,10 @@
+.breadcrumb {
+  @extend %headline-xs;
+  color: $light;
+  text-transform: uppercase;
+  transition: color $ease-fast;
+
+  &:hover {
+    color: $green;
+  }
+}

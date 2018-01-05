@@ -1,6 +1,6 @@
 .home-articles {
   // flex item
-  flex: 1 1 auto;
+  flex: 1 1 calc(100% - 460px);
   // flex
   display: flex;
   flex-wrap: wrap;
@@ -14,13 +14,31 @@
   }
   
   &__article {
+    background-size: cover;
+    background-position: center center;
+    padding: 30px;
+    position: relative;
+    transition: transform $ease-fast, box-shadow $ease-fast;
+    // flex
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    &::before { // photo shade
+      content: "";
+      background: linear-gradient(to right, rgba($dark, 0.8), rgba($dark, 0.2));
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
     &:nth-child(1) {
       background-color: $gray;
       margin-bottom: 30px;
       min-height: 400px;
-      transition: height $ease-fast;
+      width: 100%;
       // flex item
-      flex: 2 0 100%;
+      // flex: 2 0 100%;
       
       @include bp($lg) {
         flex: 3 0 auto;
@@ -32,13 +50,15 @@
       background-color: $gray;
       margin-right: 30px;
       min-height: 300px;
+      width: calc(60% - 30px);
       // flex item
-      flex: 1 1 calc(66% - 30px);
+      // flex: 0 1 calc(66% - 30px);
       
       @include bp($lg) {
         margin-right: 0;
         margin-bottom: 24px;
         min-height: 200px;
+        width: auto;
         //flex item
         flex: 1 0 auto;
       }
@@ -47,11 +67,32 @@
       background-color: $gray;
       min-height: 300px;
       min-height: 200px;
+      width: 40%;
       // flex item
-      flex: 0 0 33%;
+      // flex: 0 1 33%;
       
       @include bp($lg) {
-        flex: 1 0 auto;
+        flex: 1 1 auto;
+        width: auto;
+      }
+    }
+    &:hover {
+      box-shadow: 0px 6px 12px rgba($dark, 0.3);
+      transform: translateY(-6px);
+    }
+    &--title {
+      text-shadow: 0 2px 2px rgba($dark, 0.9);
+      color: $white;
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      
+      &.primary {
+        @extend %headline-xl;
+      }
+      
+      &.secondary {
+        @extend %headline-lg;
       }
     }
   }

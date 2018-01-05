@@ -1,0 +1,28 @@
+.builder {
+  .images {
+    margin: 0 auto;
+    position: relative;
+    &.-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__flex-item {
+      padding: 15px;
+      position: relative;
+      flex: 0 0 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include bp($md) {
+        flex: 0 0 100%;
+        padding: 12px 0;
+      }
+    }
+    &__image {
+      max-height: 75vh;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+}

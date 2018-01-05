@@ -1,10 +1,21 @@
+{% set hasModal = true %}
+
 {% extends '_layout' %}
 
 {% block content %}
-  <div class="section -top about">
-    <h1 class="about__title">About Us</h1>
+  <div class="section-white">
+    <div class="section -top about">
+      <h1 class="about__title">About Us</h1>
+    </div>
   </div>
   {% include 'about/_coaches' %}
   {% include 'about/_box' %}
   {% include 'about/_story' %}
+  {% block modal %}
+    <div class="modal js-modal section-white">
+      <div class="modal__content js-modal-content"></div>
+      <div class="modal__loader js-modal-loader">loading...</div>
+      <button class="modal__close js-modal-close">close</button>
+    </div>
+  {% endblock %}
 {% endblock %}

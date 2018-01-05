@@ -1,0 +1,50 @@
+{% for step in entry.startSteps.all() %}
+
+{% if step.sortOrder is odd %}
+  {% set sectionType = "section-gray" %}
+  {% set costBg = "-white" %}
+{% else %}
+  {% set sectionType = "section-white" %}
+  {% set costBg = "-gray" %}
+{% endif %}
+
+<section class="memberships {{sectionType}}">
+  <div class="section">
+    <div class="memberships__text">
+      <h2 class="memberships__headline">Step {{step.sortOrder}}: {{step.headline}}</h2>
+      {% if step.introCopy|length %}
+        {{step.introCopy}}
+      {% endif %}
+      {% if step.buttonText|length %}
+        <a href="{{step.buttonUrl}}" class="memberships__button button -green-dark" target="_blank">{{step.buttonText}}</a>
+      {% endif %}
+    </div>
+    {% if step.includedMemberships|length %}
+    <div class="memberships__types">
+      {% for membership in step.includedMemberships.all() %}
+        <div class="memberships__text">
+        <h3 class="memberships__types--title">{{membership.title}}</h3>
+        {{membership.introCopy}}
+        </div>
+        {% if membership.memberships|length %}
+        <div class="memberships__options">
+          {% for option in membership.memberships.all() %}
+          <a href="{{option.buttonUrl}}" class="memberships__options--item" target="_blank">
+            <h4 class="memberships__options--title">{{option.membershipTitle}}</h4>
+            <div class="memberships__options--cost {{costBg}}">
+            {{option.membershipCost}}
+            {% if option.subtext|length %}
+            <span class="memberships__options--subtext">{{option.subtext}}</span>
+            {% endif %}
+            </div>
+            <div class="memberships__options--cta">{{option.buttonText}}</div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}

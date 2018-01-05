@@ -23,4 +23,23 @@
       background-color: $white;
     }
   }
+  
+  &.-green-dark {
+    color: $white;
+    background-color: $green;
+
+    &:hover {
+      background-color: $dark;
+    }
+  }
+
+  &.-white {
+    color: $green;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $dark;
+    }
+  }
 }

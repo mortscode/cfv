@@ -1,0 +1,38 @@
+{% set coachSlug = craft.app.request.segments|last %}
+{% set coachSection = craft.entries({
+  section: 'coaches'
+}) %}
+
+{% for coach in coachSection.all() %}
+  {% if coach.slug == coachSlug %}
+  <div class="modal__next">
+    {% if coach.prev %}
+    <button class="modal__nav js-coach" data-coach="{{coach.prev.slug}}">
+      {% include 'utils/svg' with {
+        class: 'modal__nav--icon',
+        id: 'chevron-left',
+      } %}
+    </button>
+    {% endif %}
+  </div>
+  <div class="coach">
+    <div class="coach__image">
+      <img src="{{coach.coachImage.one.url('coachThumbnail')}}" alt="{{coach.title}}">
+    </div>
+    <div class="coach__text">
+      <h1 class="coach__text--name">{{coach.title}}</h1>
+      {{coach.coachBio}}
+    </div>
+  </div>
+  <div class="modal__prev">
+    {% if coach.next %}
+    <button class="modal__nav js-coach" data-coach="{{coach.next.slug}}">
+      {% include 'utils/svg' with {
+        class: 'modal__nav--icon',
+        id: 'chevron-right',
+      } %}
+    </button>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endfor %}

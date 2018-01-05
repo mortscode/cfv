@@ -5,4 +5,15 @@
       'class': 'navbar__brand--icon'
     } %}
   </a>
+  <div class="navbar__social">
+    {% for social in socialLinks.socialLinks.all() %}
+      {% set icon = social.networkName|lower %}
+      <a href="{{social.networkUrl}}" class="navbar__social--item" alt="{{social.networkName}}" title="{{social.networkName}}" target="_blank">
+        {% include 'utils/svg' with {
+          'id' : icon,
+          'class' : 'navbar__social--icon',
+        } %}
+      </a>
+    {% endfor %}
+  </div>
 </div>

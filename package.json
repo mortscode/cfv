@@ -27,6 +27,7 @@
     "phantomjs-polyfill": "0.0.2",
     "prettier-eslint": "^8.2.1",
     "properjs-controller": "^0.2.0",
+    "properjs-hobo": "^0.3.18",
     "properjs-resizecontroller": "^0.2.2",
     "properjs-scrollcontroller": "^0.2.2"
   },

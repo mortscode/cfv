@@ -1,0 +1,27 @@
+.builder {
+  .text {
+    margin: 0 auto;
+    max-width: 500px;
+
+    .-blog-headline {
+      @extend %headline-lg;
+      margin: 0 0 24px;
+    }
+    
+    .-blog-subhead {
+      @extend %headline-md;
+      margin: 0 0 24px;
+    }
+
+    p {
+      @extend %text-lg;
+      margin: 0 0 24px;
+    }
+
+    & > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

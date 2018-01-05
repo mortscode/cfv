@@ -1,11 +1,21 @@
-<div class="coaches section">
-  <h2 class="coaches__title">Our Coaches</h2>
-  <div class="coaches__wrapper">
-  {% for coach in craft.entries.section('coaches').all() %}
-    <a href="{{coach.url('coachThumbnail')}}" class="coaches__coach">
-      <img src="{{coach.coachImage.one.url}}" alt="Coach {{coach.title}}" class="coaches__coach--image">
-      <h3 class="coaches__coach--name">{{coach.title}}</h3>
-    </a>
-  {% endfor %}
+<section class="section-gray js-coaches">
+  <div class="coaches section">
+    <h2 class="coaches__title">Our Coaches</h2>
+    <div class="coaches__wrapper">
+    {% set coaches = craft.entries({
+      section: 'coaches',
+      with: [
+        ['coachImage', {
+            withTransforms: ['coachThumbnail']
+        }]
+      ]
+    }) %}
+    {% for coach in coaches.all() %}
+      <button class="coaches__coach js-coach" data-coach="{{coach.slug}}">
+        <img src="{{coach.coachImage[0].url('coachThumbnail')}}" alt="Coach {{coach.title}}" class="coaches__coach--image">
+        <h3 class="coaches__coach--name">{{coach.title}}</h3>
+      </button>
+    {% endfor %}
+    </div>
   </div>
-</div>
+</section>

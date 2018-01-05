@@ -1,8 +1,14 @@
 {% extends '_layout' %}
 
 {% block content %}
+<section class="section-white">
   <div class="section schedule">
-  <h1 class="schedule__title">Class Schedule</h1>
-  <iframe id="blockrandom" class="wrapper schedule__iframe" name="iframe" src="https://crossfit-fort-vancouver.triib.com/schedule-embed/" width="100%" height="600" scrolling="no" frameborder="0"></iframe>
+    <h1 class="schedule__title">Class Schedule</h1>
   </div>
+</section>
+<section class="section-gray">
+  <div class="section">
+    <iframe id="blockrandom" class="wrapper schedule__iframe" name="iframe" src="https://crossfit-fort-vancouver.triib.com/schedule-embed/" width="100%" height="800" scrolling="no" frameborder="0"></iframe>
+  </div>
+</section>
 {% endblock %}

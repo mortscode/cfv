@@ -1,27 +1,8 @@
-<div class="footer section -both">
-  <div class="footer__column footer__nav">
-    <ul class="footer__nav--list">
-    {% for item in mainNavigation.navigationLink.all() %}
-      <li class="footer__nav--item">
-        {% include 'utils/link' with {
-          'item' : item,
-          'class' : 'footer__nav--link'
-        } %}
-      </li>
-    {% endfor %}
-    </ul>
+{% include 'globals/footer/_pre-footer' %}
+<footer class="section-dark">
+  <div class="footer section">
+    {% include 'globals/footer/_footer-nav' %}
+    {% include 'globals/footer/_footer-links' %}
+    {% include 'globals/footer/_footer-contact' %}
   </div>
-  <div class="footer__column">
-    <ul class="footer__nav--list">
-    {% for item in footerLinks.navigationLink.all() %}
-      <li class="footer__nav--item">
-        {% include 'utils/link' with {
-          'item' : item,
-          'class' : 'footer__nav--link'
-        } %}
-      </li>
-    {% endfor %}
-    </ul>
-  </div>
-  <div class="footer__column"></div>
-</div>
+</footer>

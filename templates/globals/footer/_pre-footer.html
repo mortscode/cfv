@@ -1,0 +1,13 @@
+<section class="section-green">
+  <div class="prefooter section">
+    <h2 class="prefooter__title">{{prefooter.prefooterTitle}}</h2>
+    <div class="prefooter__cta">
+      {% include 'utils/button' with {
+        'href' : prefooter.prefooterButtonLink.one.url,
+        'class' : "prefooter__cta--button",
+        'color' : "white",
+        'text' : prefooter.prefooterButtonText
+      } %}
+    </div>
+  </div>
+</section>

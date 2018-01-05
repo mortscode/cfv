@@ -1,0 +1,27 @@
+.prefooter {
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__title {
+    @extend %headline-xl;
+    color: $white;
+    // flex item
+    flex: 1 0 auto;
+
+    @include bp($lg) {
+      text-align: center;
+      flex: 0 0 100%;
+    }
+  }
+  &__cta {
+    // flex item
+    flex: 0 1 auto;
+
+    @include bp($lg) {
+      text-align: center;
+      flex: 0 0 100%;
+      padding-top: 30px;
+    }
+  }
+}

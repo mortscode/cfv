@@ -1,0 +1,12 @@
+<div class="footer__column">
+  <ul class="footer__nav--list">
+  {% for item in footerLinks.navigationLink.all() %}
+    <li class="footer__nav--item">
+      {% include 'utils/link' with {
+        'item' : item,
+        'class' : 'footer__nav--link'
+      } %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>

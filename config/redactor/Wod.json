@@ -1,0 +1,11 @@
+{
+  "buttons": ["formatting", "bold", "underline", "lists", "link"],
+  "formatting": ["p"],
+  "formattingAdd": {
+    "Heading": {
+      "title": "Headline",
+      "args": ["h4", "class", "-wod-headline"]
+    }
+  },
+  "toolbarFixed": true
+}

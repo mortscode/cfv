@@ -1,66 +1,146 @@
 @mixin section-outer($bg: $light) {
-  position: relative;
-  padding: 60px 60px 60px (60px + $navbar-lg);
+  padding-left: $navbar-lg;
   background-color: #{$bg};
-  z-index: 1;
-  transition: padding $ease-med;
   // flex
   display: flex;
-  flex-wrap: wrap;
-
-  @include bp($lg) {
-    padding: 40px 40px 40px (40px + $navbar-lg);
-  }
   
   @include bp($md) {
-    padding: 40px 40px 40px (40px + $navbar-md);
+    padding-left: $navbar-md;
   }
-  
+
   @include bp($sm) {
-    padding: 40px 0 40px ($navbar-sm);
+    padding-left: $navbar-sm;
   }
 }
 
-.section {
-  @include section-outer();
-  max-width: $max-content;
+@mixin section-inner($padding: 'default') {
   margin: 0 auto;
-
-  &.-top {
-    padding-top: 60px;
-    
-    @include bp($lg) {
-      padding-top: 40px;
-    }
-  }
+  position: relative;
+  z-index: 1;
+  transition: padding $ease-med;
+  // flex item
+  flex: 0 0 100%;
+  // flex
+  display: flex;
+  flex-wrap: wrap;
   
-  &.-bottom {
-    padding-bottom: 60px;
+  @if $padding == 'top' {
+    padding: 90px 60px 60px;
     
     @include bp($lg) {
-      padding-bottom: 40px;
-    }
-  }
-  
-  &.-both {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    
-    @include bp($lg) {
-      padding-bottom: 40px;
-      padding-top: 40px;
-    }
-  }
-
-  &.-hero {
-    padding-top: 60px;
-    
-    @include bp($lg) {
-      padding-top: 40px;
+      padding: 60px 40px 40px;
     }
 
     @include bp($sm) {
-      padding-top: 0px;
+      padding: 36px 24px 24px;
     }
+  }
+
+  @if $padding == 'bottom' {
+    padding: 60px 60px 90px;
+    
+    @include bp($lg) {
+      padding: 40px 40px 60px;
+    }
+
+    @include bp($sm) {
+      padding: 24px 24px 36px;
+    }
+  }
+
+  @if $padding == 'hero' {
+    padding: 60px 60px 0;
+    
+    @include bp($lg) {
+      padding: 40px 40px 0;
+    }
+
+    @include bp($sm) {
+      padding: 0;
+    }
+  }
+
+  @if $padding == 'half' {
+    padding: 30px 60px;
+    
+    @include bp($lg) {
+      padding: 20px 40px;
+    }
+
+    @include bp($sm) {
+      padding: 12px 24px;
+    }
+  }
+
+  @if $padding == 'default' {
+    padding: 60px 60px;
+    
+    @include bp($lg) {
+      padding: 40px 40px;
+    }
+
+    @include bp($sm) {
+      padding: 24px 24px;
+    }
+  }
+
+  @if $padding == 'none' {
+    padding: 0;
+  }
+
+}
+
+@mixin content-width ($width: $max-content) {
+  max-width: $width;
+}
+
+// SCSS
+
+.section-gray {
+  @include section-outer($light);
+}
+
+.section-white {
+  @include section-outer($white);
+}
+
+.section-dark {
+  @include section-outer($dark);
+}
+
+.section-green {
+  @include section-outer($green);
+}
+
+.section-transparent {
+  @include section-outer('transparent');
+}
+
+.section {
+  @include section-inner();
+  @include content-width();
+
+  &.-top {
+    @include section-inner(top);
+  }
+
+  &.-bottom {
+    @include section-inner(bottom);
+  }
+
+  &.-hero {
+    @include section-inner(hero);
+  }
+
+  &.-half {
+    @include section-inner(half);
+  }
+
+  &.-none {
+    @include section-inner(none);
+  }
+
+  &.-narrow {
+    @include content-width($narrow-content);
   }
 }

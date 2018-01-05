@@ -1,0 +1,132 @@
+.memberships {
+  &__headline {
+    @extend %headline-lg;
+    color: $green;
+    //flex item
+    flex: 0 0 100%;
+  }
+  
+  &__text {
+    max-width: 500px;
+    
+    p {
+      @extend %text-md;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+  }
+  
+  &__button {
+    margin-top: 30px;
+  }
+  
+  &__types {
+    //flex item
+    flex: 0 0 100%;
+
+    &--title {
+      @extend %headline-md;
+      margin-top: 60px;
+    }
+  }
+
+  &__options {
+    //flex
+    display: flex;
+    flex-wrap: wrap;
+
+    @include bp($md) {
+      justify-content: space-between;
+    }
+
+    &--item {
+      margin: 30px 30px 0 0;
+      text-align: center;
+      transition: box-shadow $ease-fast, transform $ease-fast;
+      // flex item
+      flex: 0 0 calc(25% - 30px);
+      // flex
+      display: flex;
+      flex-direction: column;
+      
+      @include bp($md) {
+        flex: 0 0 calc(50% - 30px);
+      }
+      
+      @include bp($sm) {
+        flex: 0 0 100%;
+      }
+
+      &:hover {
+        box-shadow: 0px 6px 12px rgba($dark, 0.3);
+        transform: translateY(-6px);
+      }
+    }
+
+    &--title {
+      @extend %headline-sm;
+      background-color: $dark;
+      color: $white;
+      padding: 12px 0;
+      text-transform: uppercase;
+      flex-grow: 0;
+    }
+
+    &--cost {
+      @extend %text-xl;
+      padding: 24px 0;
+      text-transform: uppercase;
+      //flex item
+      flex-grow: 1;
+      //flex
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      &.-white {
+        background-color: $white;
+      }
+      
+      &.-gray {
+        background-color: $gray;
+      }
+    }
+    
+    &--subtext {
+      @extend %text-sm;
+      display: block;
+      flex: 0 0 100%;
+    }
+
+    &--cta {
+      @extend %headline-sm;
+      background-color: $green;
+      color: $white;
+      padding: 12px 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .memberships__options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    flex: auto;
+    margin-top: 30px;
+    
+    @include bp($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include bp($sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--item {
+      margin: 0;
+    }
+  }
+}

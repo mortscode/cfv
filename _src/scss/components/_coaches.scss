@@ -1,22 +1,13 @@
 .coaches {
   box-shadow: 0;
   overflow-x: hidden;
-  // margin: 0 -15px;
-  // // flex item
-  // flex: 0 0 100%;
   // flex
   display: flex;
-  // flex-wrap: wrap;
 
-  
   &__title {
     @extend %headline-lg;
     //flex item
     flex: 0 0 100%;
-    
-    @include bp($sm) {
-      padding: 0 24px;
-    }
   }
   
   &__wrapper {
@@ -37,6 +28,10 @@
   }
   
   &__coach {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
     padding: 24px 15px 0;
     // flex item
     flex: 0 0 calc(25%);
@@ -68,6 +63,30 @@
       color: $green;
       margin-top: 8px;
       text-align: center;
+    }
+  }
+}
+
+// GRID
+@supports (display: grid) {
+  .coaches {
+    &__wrapper {
+      margin: 30px 0 0;
+      flex: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 40px;
+      
+      @include bp($md) {
+        margin: 24px 0 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 24px;
+      }
+    }
+    &__coach {
+      padding: 0;
+      // flex item
+      flex: auto;
     }
   }
 }

@@ -38,6 +38,22 @@
         padding: 0;
       }
     }
+    &--note {
+      @extend %text-lg;
+      color: $gray;
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: none;
+    }
+  }
+
+  &__text-block {
+    @extend %text-md;
+    color: $light;
+    display: inline-block;
+    max-width: 240px;
+    padding: 15px;
   }
 
   &__cta {

@@ -1,0 +1,68 @@
+.wod-entry {
+  &__date {
+    @extend %headline-md;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  &__title {
+    @extend %headline-xl;
+    color: $green;
+    padding-top: 12px;
+    // flex item
+    flex: 0 0 100%;
+  }
+  &__workout {
+    padding-right: 120px;
+    max-width: 500px;
+    // flex-item
+    flex: 0 0 auto;
+    .-wod-headline {
+      @extend %headline-md;
+      margin: 0 0 16px;
+    }
+    p {
+      @extend %text-lg;
+      margin: 0 0 16px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li,
+    li u,
+    li b {
+      @extend %headline-lg;
+      list-style: none;
+      margin-bottom: 1.8rem;
+    }
+    li a {
+      @extend %headline-lg;
+      color: $green;
+      list-style: none;
+      margin-bottom: 1.8rem;
+      padding: 0;
+      transition: padding $ease-fast;
+
+      &:hover {
+        padding-left: 12px;
+      }
+    }
+  }
+  &__notes {
+    max-width: 400px;
+    // flex item
+    flex: 0 1 auto;
+    &--wrapper {
+      background-color: $white; 
+      padding: 24px;
+    }
+    p {
+      @extend %text-md;
+      margin: 0 0 16px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

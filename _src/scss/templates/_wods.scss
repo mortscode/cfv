@@ -1,0 +1,103 @@
+.wods { 
+  &__title {
+    @extend %headline-xl;
+    color: $green;
+  }
+  &__wod {
+    margin: 0 12px 24px;
+    position: relative;
+    text-align: center;
+    transition: transform $ease-fast, box-shadow $ease-fast;
+    //flex item
+    flex: 0 0 calc(25% - 15px);
+    // flex
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      @extend %box-shadow-hover;
+
+      .wods__wod--title {
+        color: $green;
+      }
+    }
+
+    &--date {
+      @extend %text-md;
+      background-color: $dark;
+      color: $light;
+      font-weight: 800;
+      padding: 12px;
+      text-transform: uppercase;
+      transition: font-size $ease-fast;
+      // flex item
+      flex: 0 0 auto;
+      @include bp($sm) {
+        font-size: 1.4rem;
+      }
+    }
+    &--title {
+      @extend %headline-lg;
+      background-color: $white;
+      color: $dark;
+      padding: 24px 12px;
+      transition: color $ease-fast;
+      // flex item
+      flex: 1 0 auto;
+      // flex
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--tag-list {
+      background-color: $white;
+      margin: 0;
+      padding: 6px;
+      // flex item
+      flex: 0 auto;
+      // flex
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &--tag {
+      @extend %text-sm;
+      background-color: $green;
+      color: $white;
+      font-weight: 600;
+      list-style: none;
+      margin: 6px;
+      padding: 4px 8px;
+      text-transform: uppercase;
+      // flex item
+      flex: 1 1 auto;
+    }
+  }
+}
+
+@supports (display: grid) {
+  .wods {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    flex: auto;
+    
+    @include bp($lg) {
+      grid-gap: 24px;
+    }
+    
+    @include bp($md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include bp($sm) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    &__wod {
+      margin: 0;
+    }
+  }
+}

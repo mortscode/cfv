@@ -37,9 +37,14 @@
     background-color: $dark;
     color: $white;
     padding: 15px 40px;
+    transition: color $ease-fast, background $ease-fast;
 
     @include bp($md) {
       padding: 18px 24px;
+    }
+
+    &:hover {
+      background-color: darken($green, 10%);
     }
   }
   &__workout {
@@ -52,8 +57,25 @@
       padding: 18px 24px;
     }
 
+    h2 {
+      @extend %wod-headline;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
     p {
       @extend %wod-text;
+      font-weight: 600;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      @extend %wod-text;
+      list-style: none;
     }
   }
   &__cta {

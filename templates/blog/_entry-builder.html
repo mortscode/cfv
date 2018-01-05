@@ -1,0 +1,16 @@
+{% set blocks = entry.entryBuilder %}
+<div class="builder">
+  {% for block in blocks.all() %}
+    {% if block.sortOrder is odd %}
+      {% set sectionType = "section-gray" %}
+    {% else %}
+      {% set sectionType = "section-white" %}
+    {% endif %}
+    
+    <div class="{{sectionType}}">
+      <div class="section">
+        {% include ('blog/partials/_block-' ~ block.type.handle) %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

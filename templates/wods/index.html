@@ -1,7 +1,10 @@
 {% extends '_layout' %}
 
 {% block content %}
+<section class="section-white">
   <div class="section">
-  {{ entry.title }}
+    <h1 class="wods__title">Wod Archive</h1>
   </div>
+</section>
+{% include 'wods/_wod-archive' %}
 {% endblock %}

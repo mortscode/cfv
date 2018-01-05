@@ -9,9 +9,5 @@
     color: $green;
     // flex item
     flex: 0 0 100%;
-
-    @include bp($sm) {
-      padding: 0 24px;
-    }
   }
 }
