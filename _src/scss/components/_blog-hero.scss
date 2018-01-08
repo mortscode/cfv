@@ -1,10 +1,12 @@
-.blog-hero{
-  // max-width: 1100px;
-  // margin: 0 auto;
+.blog-hero {
   position: relative;
   //flex
   display: flex;
   flex-wrap: wrap;
+
+  @include bp($md) {
+    padding: 24px 0 0;
+  }
 
   &__headline {
     @extend %headline-xl;
@@ -20,6 +22,7 @@
     max-height: 70vh;
     max-width: 100%;
     min-height: 500px;
+    vertical-align: middle;
     height: auto;
     width: auto;
 

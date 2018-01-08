@@ -29,14 +29,20 @@
       margin: 0;
     }
     li,
+    li > *,
+    li a,
     li u,
-    li b {
+    li b,
+    li em {
       @extend %headline-lg;
       list-style: none;
       margin-bottom: 1.8rem;
     }
+    li u {
+      color: $green;
+      text-decoration: none;
+    }
     li a {
-      @extend %headline-lg;
       color: $green;
       list-style: none;
       margin-bottom: 1.8rem;

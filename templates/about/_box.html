@@ -1,10 +1,11 @@
-{% set bgImage = entry.boxImage.one.url %}
+{% for box in entry.theBox.all() %}
 <section class="section-white">
-  <div class="box" style="background-image:url('{{bgImage}}');">
+  <div class="box" style="background-image:url('{{box.backgroundImage.one.url}}');">
     <div class="box__shade"></div>
     <div class="box__text">
-      <h2 class="box__text--title">The Box</h2>
-      <p class="box__text--body">Gallia est omnis divisa in partes tres, quarum. Hi omnes lingua, institutis, legibus inter se differunt. Qui ipsorum lingua Celtae, nostra Galli appellantur. Contra legem facit qui id facit quod lex prohibet. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nec dubitamus multa iter quae et nos invenerat.</p>
+      <h2 class="box__text--title">{{box.headline}}</h2>
+      {{box.bodyCopy}}
     </div>
   </div>
 </section>
+{% endfor %}

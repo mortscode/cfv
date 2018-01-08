@@ -1,5 +1,11 @@
+{% set blocks = entry.ourStory %}
 <section class="section-gray">
   <div class="story section">
-    <h2 class="story__title">Our Story</h2>
+    <div class="story__wrapper">
+      <h2 class="story__title">Our Story</h2>
+      {% for block in blocks.all() %}
+        {% include ('about/partials/_block-' ~ block.type.handle) %}
+      {% endfor %}
+    </div>
   </div>
 </section>
