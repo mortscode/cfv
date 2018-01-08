@@ -8,12 +8,12 @@
   {% include 'globals/navigation' %}
   <div class="main tk-fade">
     <div class="content">
-      {% block content %}
-      {% endblock %}
+      {% block content %}{% endblock %}
     </div>
     {% include 'globals/footer' %}
     {% block modal %}{% endblock %}
   </div>
   <script async src="/assets/scripts/main.js"></script>
+  {% block entryJs %}{% endblock %}
 </body>
 </html>

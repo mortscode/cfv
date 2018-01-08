@@ -3,4 +3,9 @@
     @extend %headline-xl;
     color: $green;
   }
+
+  &__iframe {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
 }

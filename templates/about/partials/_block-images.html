@@ -1,0 +1,5 @@
+<div class="story__images {% if block.image|length > 1 %}-double{% endif %}">
+{% for image in block.image.all() %}
+  <img src="{{image.url}}" alt="{{image.title}}" class="story__images--image">
+{% endfor %}
+</div>

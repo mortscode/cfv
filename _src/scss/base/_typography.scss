@@ -86,8 +86,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   transition: font-size $ease-fast;
 
-  @include bp($lg) {
-    font-size: 1rem;
+  @include bp($md) {
+    font-size: 1.4rem;
   }
 }
 
