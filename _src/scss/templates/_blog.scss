@@ -15,6 +15,7 @@
     background-color: $white;
     margin-bottom: 30px;
     position: relative;
+    transition: box-shadow $ease-fast, transform $ease-fast;
     //flex item
     flex: 0 0 calc(25% - 15px);
     @include bp($lg) {
@@ -30,7 +31,6 @@
     &--image {
       background: 50% 50% no-repeat;
       background-size: cover;
-      transition: box-shadow $ease-fast, transform $ease-fast;
       &::after {
         content: "";
         display: block;
@@ -52,13 +52,32 @@
     }
 
     &:hover {
-      .blog__entry--image {
-        box-shadow: 0px 6px 12px rgba($dark, 0.3);
-        transform: translateY(-6px);
-      }
+      box-shadow: 0px 6px 12px rgba($dark, 0.3);
+      transform: translateY(-6px);
+
       .blog__entry--title {
         color: $green;
       }
     }
+  }
+}
+
+@supports (display: grid) {
+  .blog__entries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    flex: auto;
+    
+    @include bp($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include bp($sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .blog__entry {
+    margin: 0;
   }
 }
