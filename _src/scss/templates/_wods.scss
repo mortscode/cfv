@@ -1,7 +1,54 @@
-.wods { 
+.wods {
+  &__header {
+    justify-content: flex-start;
+    align-items: center;
+  }
   &__title {
     @extend %headline-xl;
     color: $green;
+    //flex item
+    flex: 1 0 auto;
+  }
+  &__search {
+    //flex item
+    flex: 0 1 auto;
+    &--form {
+      position: relative;
+    }
+    &--input {
+      @extend %headline-lg;
+      background-color: rgba($gray, 0.25);
+      border: 0;
+      outline: none;
+      color: $green;
+      padding: 6px 15px;
+      width: 400px;
+      &::placeholder {
+        color: $gray;
+      }
+    }
+    &--submit {
+      display: none;
+    }
+    &--icon-wrapper {
+      background-color: $green;
+      border: 1px solid green;
+      cursor: pointer;
+      position: absolute;
+      height: 100%;
+      width: 50px;
+      top: 0;
+      right: 0;
+      left: calc(100% - 50px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--icon {
+      fill: $white;
+      height: 30px;
+      width: 30px;
+    }
   }
   &__wod {
     margin: 0 12px 24px;

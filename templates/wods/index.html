@@ -2,8 +2,22 @@
 
 {% block content %}
 <section class="section-white">
-  <div class="section">
+  <div class="section wods__header">
     <h1 class="wods__title">Wod Archive</h1>
+    <div class="wods__search">
+      <form action="{{ url('wods/results') }}" class="wods__search--form">
+        <input type="search" name="q" placeholder="Search" class="wods__search--input">
+        <label>
+          <input type="submit" value="Go" class="wods__search--submit">
+          <a class="wods__search--icon-wrapper">
+            {% include 'utils/svg' with {
+              id: 'search',
+              class: 'wods__search--icon',
+            } %}
+          </a>
+        </label>
+      </form>
+    </div>
   </div>
 </section>
 {% include 'wods/_wod-archive' %}
