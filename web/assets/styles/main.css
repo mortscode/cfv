@@ -668,7 +668,7 @@ h1, h2, h3, h4, h5, h6 {
 .wod-entry__workout li a,
 .wod-entry__workout li u,
 .wod-entry__workout li b,
-.wod-entry__workout li em, .wods__wod--title {
+.wod-entry__workout li em, .wods__search--input, .wods__wod--title {
   font-family: "futura-pt-condensed", "Arial Narrow", serif;
   font-size: 3.0rem;
   font-style: italic;
@@ -683,7 +683,7 @@ h1, h2, h3, h4, h5, h6 {
     .wod-entry__workout li a,
     .wod-entry__workout li u,
     .wod-entry__workout li b,
-    .wod-entry__workout li em, .wods__wod--title {
+    .wod-entry__workout li em, .wods__search--input, .wods__wod--title {
       font-size: 2.4rem; } }
 
 .builder .text .-blog-subhead, .button, .home-classes__title, .home-classes__cta, .home-wod__wod-title, .home-wod__cta, .memberships__types--title, .wod-entry__date, .wod-entry__workout .-wod-headline {
@@ -2347,8 +2347,66 @@ h1, h2, h3, h4, h5, h6 {
     .wod-entry__notes p:last-child {
       margin: 0; }
 
+.wods__header {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .wods__title {
-  color: #0D9648; }
+  color: #0D9648;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto; }
+
+.wods__search {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto; }
+  .wods__search--form {
+    position: relative; }
+  .wods__search--input {
+    background-color: rgba(189, 191, 190, 0.25);
+    border: 0;
+    outline: none;
+    color: #0D9648;
+    padding: 6px 15px;
+    width: 400px; }
+    .wods__search--input::-webkit-input-placeholder {
+      color: #BDBFBE; }
+    .wods__search--input:-ms-input-placeholder {
+      color: #BDBFBE; }
+    .wods__search--input::-ms-input-placeholder {
+      color: #BDBFBE; }
+    .wods__search--input::placeholder {
+      color: #BDBFBE; }
+  .wods__search--submit {
+    display: none; }
+  .wods__search--icon-wrapper {
+    background-color: #0D9648;
+    border: 1px solid green;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    top: 0;
+    right: 0;
+    left: calc(100% - 50px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .wods__search--icon {
+    fill: #ffffff;
+    height: 30px;
+    width: 30px; }
 
 .wods__wod {
   margin: 0 12px 24px;
