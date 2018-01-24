@@ -6,10 +6,15 @@
   bottom: 0;
   left: 0;
   opacity: 0;
+  padding-top: 120px;
   pointer-events: none;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   z-index: $z-modal;
   transition: opacity $ease-med;
+
+  @include bp($sm) {
+    padding-top: 90px;
+  }
 
   &.-active {
     opacity: 1;
@@ -35,8 +40,9 @@
     color: $gray;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 48%;
     opacity: 0;
+    padding-right: 24px;
     pointer-events: none;
     transform: translate(-50% -50%);
     transition: opacity $ease-med;
@@ -47,15 +53,17 @@
   }
 
   &__content {
-    padding: 40px 0;
+    padding: 0 100px;
     width: 100%;
     opacity: 0;
+    overflow-y: scroll;
     transform: translateY(40px);
     transition: opacity $ease-med, transform $ease-med;
-    // flex
-    display: flex;
-    align-items: center;
     justify-content: center;
+
+    @include bp($sm) {
+      padding: 0 60px;
+    }
 
     &.-active {
       opacity: 1;
@@ -70,7 +78,7 @@
     position: absolute;
     display: inline-block;
     top: 40px;
-    left: 50%;
+    left: calc(50% + 50px);
     transform: translateX(-50%);
     padding: 12px 30px;
     background-color: transparent;
@@ -79,6 +87,15 @@
     outline: 0;
     cursor: pointer;
     transition: color $ease-fast, background $ease-fast, border $ease-fast;
+    
+    @include bp($md) {
+      left: calc(50% + 36px);
+    }
+    
+    @include bp($sm) {
+      top: 24px;
+      left: calc(50% + 24px);
+    }
 
     &:hover {
       background-color: $green;
@@ -90,8 +107,23 @@
   &__next,
   &__prev {
     padding: 40px 0;
+    position: absolute;
     text-align: center;
+    top: 50%;
+    transform: translateY(-95%);
     width: 100px;
+
+    @include bp($sm) {
+      width: 60px;
+    }
+  }
+
+  &__next {
+    right: 0;
+  }
+  
+  &__prev {
+    left: 0;
   }
   
   &__nav {
@@ -129,6 +161,10 @@
       justify-content: flex-end;
       align-items: flex-start;
 
+      @include bp($md) {
+        flex: 0 0 100%;
+      }
+
       &::after {
         content: "";
         display: block;
@@ -148,6 +184,11 @@
     &__text {
       margin-left: 40px;
       flex: 0 0 50%;
+
+      @include bp($md) {
+        margin: 24px 0;
+        flex: 0 0 100%;
+      }
 
       &--name {
         @extend %headline-lg;

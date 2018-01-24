@@ -5,7 +5,7 @@
 
 {% for coach in coachSection.all() %}
   {% if coach.slug == coachSlug %}
-  <div class="modal__next">
+  <div class="modal__prev">
     {% if coach.prev %}
     <button class="modal__nav js-coach" data-coach="{{coach.prev.slug}}">
       {% include 'utils/svg' with {
@@ -24,7 +24,7 @@
       {{coach.coachBio}}
     </div>
   </div>
-  <div class="modal__prev">
+  <div class="modal__next">
     {% if coach.next %}
     <button class="modal__nav js-coach" data-coach="{{coach.next.slug}}">
       {% include 'utils/svg' with {

@@ -1,7 +1,12 @@
 .builder {
   .text {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 600px;
+    transition: max-width $ease-fast;
+
+    @include bp($md) {
+      max-width: 500px;
+    }
 
     .-blog-headline {
       @extend %headline-lg;

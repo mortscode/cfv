@@ -26,5 +26,6 @@ Thumbs.db
 .babelrc
 .eslintrc
 .scss-lint.yml
+scripts/.env.sh
 
 libs
