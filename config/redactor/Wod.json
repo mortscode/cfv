@@ -2,9 +2,9 @@
   "buttons": ["formatting", "bold", "underline", "lists", "link"],
   "formatting": ["p"],
   "formattingAdd": {
-    "Heading": {
+    "Headline": {
       "title": "Headline",
-      "args": ["h4", "class", "-wod-headline"]
+      "args": ["h3", "class", "-wod-headline"]
     }
   },
   "toolbarFixed": true

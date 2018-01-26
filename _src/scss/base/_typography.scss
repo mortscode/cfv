@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-%headline-xl {
+%headline-xxl {
   font-family: $font-title;
   font-size: 4.8rem;
   font-style: italic;
@@ -19,6 +19,20 @@ h1, h2, h3, h4, h5, h6 {
 
   @include bp($lg) {
     font-size: 3.6rem;
+  }
+}
+
+%headline-xl {
+  font-family: $font-title;
+  font-size: 3.6rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: font-size $ease-fast;
+
+  @include bp($lg) {
+    font-size: 3.0rem;
   }
 }
 
@@ -93,12 +107,13 @@ h1, h2, h3, h4, h5, h6 {
 
 %text-xl {
   font-family: $font-body;
-  font-size: 2.1rem;
+  font-size: 2.4rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 3rem;
 
   @include bp($md) {
     font-size: 1.8rem;
+    line-height: 2.4rem;
   }
 }
 
@@ -118,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-body;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 2.8rem;
 }
 
 %text-sm {
@@ -151,28 +166,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 %wod-headline {
-  font-family: $font-body;
-  font-size: 1.6rem;
+  font-family: $font-title;
+  font-size: 2.4rem;
+  font-style: italic;
   font-weight: 800;
-  line-height: 1.4;
-  margin-bottom: 1.6rem;
+  line-height: 1;
+  margin: 1.6rem 0;
+  text-transform: uppercase;
   transition: font-size $ease-fast;
 
-  @include bp($lg) {
-    font-size: 1.4rem;
+  @include bp($md) {
+    font-size: 2.1rem;
+    line-height: 1;
+  }
+}
+
+%wod-movement {
+  font-family: $font-body;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 2.8rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  transition: font-size $ease-fast;
+
+  @include bp($md) {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
   }
 }
 
 %wod-text {
   font-family: $font-body;
-  font-size: 2rem;
-  line-height: 1.4;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
   margin-bottom: 1.2rem;
   transition: font-size $ease-fast;
-
-  @include bp($lg) {
-    font-size: 1.6rem;
-  }
 }
 
 %footer-link {

@@ -9,7 +9,12 @@
 <section class="section-white">
   <div class="section">
     <date class="wod-entry__date">{{entry.postDate|date('F d, Y')}}</date>
-    <h1 class="wod-entry__title">{{ entry.title }}</h1>
+    {% if entry.wodTitle|length %}
+    <h1 class="wod-entry__title">{{ entry.wodTitle }}</h1>
+    {% else %}
+    <h1 class="wod-entry__title">Workout of the day</h1>
+    {% endif %}
+    
   </div>
 </section>
 <section class="section-gray">

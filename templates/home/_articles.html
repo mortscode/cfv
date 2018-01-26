@@ -19,7 +19,8 @@
 {% endif %}
 
 <div class="home-articles">
-  <a href="{{ article1.url }}" class="home-articles__article" style="background-image:url('{{ article1.featuredImage.one.url }}')">
+  {{article1.featuredImage.one.focalPoint}}
+  <a href="{{ article1.url }}" class="home-articles__article" style="background-image:url('{{ article1.featuredImage.one.url }}');background-position:{{article1.featuredImage.one.focalPoint}}">
     <h2 class="home-articles__article--title primary">{{ article1.title }}</h2>
   </a>
   <a href="{{ article2.url }}" class="home-articles__article" style="background-image:url('{{ article2.featuredImage.one.url }}')">

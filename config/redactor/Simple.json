@@ -1,4 +1,11 @@
 {
-	"buttons": ["bold", "italic"],
-	"toolbarFixed": true
+  "buttons": ["formatting", "bold", "link"],
+  "formatting": ["p"],
+  "formattingAdd": {
+    "Headline": {
+      "title": "Headline",
+      "args": ["h3", "class", "-wod-headline"]
+    }
+  },
+  "toolbarFixed": true
 }

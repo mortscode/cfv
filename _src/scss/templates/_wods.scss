@@ -4,14 +4,21 @@
     align-items: center;
   }
   &__title {
-    @extend %headline-xl;
+    @extend %headline-xxl;
     color: $green;
     //flex item
     flex: 1 0 auto;
+    @include bp($md) {
+      flex: 0 0 100%;
+    }
   }
   &__search {
     //flex item
     flex: 0 1 auto;
+    @include bp($md) {
+      flex: 0 0 100%;
+      margin-top: 30px;
+    }
     &--form {
       position: relative;
     }
@@ -23,6 +30,9 @@
       color: $green;
       padding: 6px 15px;
       width: 400px;
+      @include bp($md) {
+        width: 100%;
+      }
       &::placeholder {
         color: $gray;
       }
@@ -139,8 +149,12 @@
     @include bp($sm) {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 12px;
-      padding-left: 12px;
-      padding-right: 12px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    @include bp($xs) {
+      grid-template-columns: repeat(1, 1fr);
     }
 
     &__wod {

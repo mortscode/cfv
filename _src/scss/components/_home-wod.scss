@@ -57,25 +57,31 @@
       padding: 18px 24px;
     }
 
-    h2 {
+    .-wod-headline {
       @extend %wod-headline;
       font-weight: 600;
       margin: 0 0 16px;
     }
 
+    strong {
+      @extend %wod-movement;
+      font-weight: 900;
+      margin: 12px 0;
+    }
+
     p {
       @extend %wod-text;
-      font-weight: 600;
     }
 
     ul {
-      padding: 0;
-      margin: 0;
+      padding-left: 21px;
+      margin: 0 0 1.2rem;
     }
 
     li {
       @extend %wod-text;
-      list-style: none;
+      margin-bottom: 6px;
+      // list-style: none;
     }
   }
   &__cta {

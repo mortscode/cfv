@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 
   &__title {
-    @extend %headline-xl;
+    @extend %headline-xxl;
     color: $green;
     // flex item
     flex: 0 0 100%;

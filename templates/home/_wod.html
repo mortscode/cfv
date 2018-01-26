@@ -1,7 +1,11 @@
 {% set currentWod = craft.entries.section('wodEntries').one %}
 <div class="home-wod">
   <div class="home-wod__title">Workout of the day</div>
-  <a href="{{currentWod.url}}" class="home-wod__wod-title">{{currentWod.title}}</a>
+  {% if currentWod.wodTitle|length %}
+  <a href="{{currentWod.url}}" class="home-wod__wod-title">{{currentWod.wodTitle}}</a>
+  {% else %}
+  <a href="{{currentWod.url}}" class="home-wod__wod-title">Go to WOD ></a>
+  {% endif %}
   <div class="home-wod__workout">
     {{currentWod.workout}}
   </div>
